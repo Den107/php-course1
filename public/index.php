@@ -13,7 +13,10 @@ include __DIR__ . '/../functions.php';
 
 <?php
 
-getGallery('photo/');
+// getGallery('photo/');
+// getGallery(getMenu());
+getMenu();
+
 
 ?>
 </body>
