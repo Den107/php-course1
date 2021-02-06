@@ -14,6 +14,7 @@ function getGallery($dir){
 
 
 
+
 function query(string $sql) {
   $host = '127.0.0.1';
   $login = 'mysql';
@@ -23,15 +24,12 @@ function query(string $sql) {
   $connection = mysqli_connect($host, $login, $password, $dbName);
   $res = mysqli_query($connection, $sql);
 
-  /*while ($row = mysqli_fetch_assoc($res)) {
-$menu[] = $row;
-}*/
-var_dump($connection);
+
+
   return mysqli_fetch_all($res, MYSQLI_ASSOC);
 
 }
 
-function getMenu(): array
-{
-   return query( "SELECT * FROM photo.photo");
-}
+$id = (int) $_GET['id'];
+$image = query("SELECT * FROM photo WHERE id = {$id}")[0];
+include "D:\OpenServer\domains\php-course1\public\photo.php";
