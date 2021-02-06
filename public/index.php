@@ -13,9 +13,18 @@ include __DIR__ . '/../functions.php';
 
 <?php
 
-getGallery('photo/');
 
-?>
+$images = query("SELECT * FROM photo");
+
+
+foreach ($images as $image) :
+  $imgUrl = "photo.php?id={$image['id']}";
+  ?>
+  <a href="/<?=$imgUrl?>" target='_blank'>
+      <img src="/photo/<?=$image['path']?>" width='200'>
+  </a>
+<? endforeach;?>
+
 </body>
 
 </html>
