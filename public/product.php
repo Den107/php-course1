@@ -1,4 +1,4 @@
-<?php include '../db/db.php'; ?>
+<?php include '../functions/functions.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +13,10 @@
 <body>
  
 <?php 
-$products = query("SELECT * FROM shop.products WHERE id={$_GET["id"]}");
+getProduct();
 ?>
 
-<?php foreach($products as $product) :?>
-<div class='card mb-3'>
-  <img src='/photo/<?=$product[3]?>' class='card-img-top' alt=''>
-  <div class='card-body'>
-    <h5 class='card-title'><?=$product[1]?></h5>
-    <p class='card-text'><?=$product[4]?></p>
-    <p class='card-text'><small class='text-muted'>Last updated 3 mins ago</small></p>
-  </div>
-</div>
-<?endforeach?>
+
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 <?php
+
 function query($sql){
   $host = '127.0.0.1';
   $login = 'mysql';
