@@ -13,9 +13,15 @@
   <form action="exit.php"> 
     <button type="submit">Выйти</button>
   </form>
+  <form action="card.php"> 
+    <button type="submit">Корзина</button>
+  </form>
  
 <?php
+session_start();
+echo "Привет {$_SESSION['login']}";
 getProducts();
+addToCard();
 ?>
 </body>
 
