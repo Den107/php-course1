@@ -1,4 +1,9 @@
-<?php include '../functions/functions.php'; ?>
+<?php
+include '../functions/functions.php'; 
+
+
+reg($_POST['login'], $_POST['password']);?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +15,7 @@
 </head>
 
 <body>
+  <?php echo "Вы зарегистрированы под ником: {$_POST['login']} <br>"; ?>
 <label>Форма Регистрации
   <form action="reg.php" method="POST">
     <input type="text" name="login" placeholder="Login"><br>
