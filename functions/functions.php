@@ -93,3 +93,11 @@ function getCard(){
 function deleteFromCard(){
 query("DELETE FROM `shop`.`card` WHERE id={$_GET["id"]}");
 }}
+
+//Add order
+function getOrder($name, $adress, $order){
+
+ query("INSERT INTO `shop`.`order` (`adress`, `name`) VALUES ($name, $adress)");
+
+ query("INSERT INTO `shop`.`order_items` (`prod_id`, `count`) VALUES ($order['id'], $order['count'])");
+}
